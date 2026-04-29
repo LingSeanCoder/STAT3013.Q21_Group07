@@ -1,0 +1,25 @@
+# TrainHyp AI Backend — Python Dependencies
+# STAT3013 | 2026
+#
+# IMPORTANT: Versions are pinned to match the environment used to create
+# the .pkl model files. Changing versions may break model deserialization.
+
+# Web framework
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+
+# Data & ML core — minimum versions for .pkl compatibility
+# Exact versions relaxed so pip can find pre-built wheels for Python 3.13/3.14
+# ai_engine.py has a compatibility shim for sklearn version differences
+pandas>=2.2.2
+numpy>=2.1.0
+scikit-learn>=1.6.1
+joblib>=1.4.0
+
+# ML models
+catboost>=1.2.7
+ngboost>=0.5.1
+interpret>=0.6.0
+
+# Python types
+pydantic>=2.0.0
