@@ -16,7 +16,7 @@
 > *Converting fragmented hypertrophy science into predictive, explainable,*
 > *safety-aware, and deployable optimization.*
 
-[📊 Dataset](https://osf.io/6z3xu/overview) · [🎥 Demo](https://drive.google.com/drive/folders/1t5nOGhR7J-a1V3LxqmBxCuO7EX1gw5cj?usp=drive_link) · [🌐 Web App](#dashboard-deployment) · [📖 Report](#deliverables--external-links)
+[📊 Dataset](https://osf.io/6z3xu/overview)    ·    [🎥 Demo](https://drive.google.com/drive/folders/1t5nOGhR7J-a1V3LxqmBxCuO7EX1gw5cj?usp=drive_link)    ·    [🌐 Web App](https://trainhyp-app.vercel.app/)
 
 </div>
 
@@ -81,7 +81,7 @@
 - ✅ A research-first statistical intelligence system
 - ✅ A translational AI pipeline from meta-analysis to deployment
 - ✅ An evidence-constrained hypertrophy optimizer
-- ✅ A multi-model benchmark study (7 models + SEM)
+- ✅ A multi-model benchmark study (7 predictive model families + SEM structural modeling layer)
 - ✅ A safety-aware prediction dashboard with uncertainty quantification
 
 ### What TrainHyp AI Is Not
@@ -97,7 +97,7 @@
 
 TrainHyp AI addresses a fundamental gap in applied exercise science: the inability to translate fragmented, paywalled, and methodologically heterogeneous hypertrophy literature into a deployable, evidence-based decision support system.
 
-The system operationalizes a curated OSF meta-analytic dataset (~69 studies, ~198 cleaned observations) through a **10-notebook scientific pipeline**, a **7-model + SEM benchmarking framework**, and a **React + FastAPI deployment stack** to deliver:
+The system operationalizes a curated OSF meta-analytic dataset (~69 studies, ~198 cleaned observations) through a **10-notebook scientific pipeline**, a **7 predictive model families + SEM benchmarking framework**, and a **React + FastAPI deployment stack** to deliver:
 
 ```
 User Input → Hypertrophy Prediction → Explainability → Safety Check → Optimization → Recommendation
