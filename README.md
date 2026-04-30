@@ -729,7 +729,7 @@ STAT3013.Q21_Group07/
 
 ### Clone Repository
 ```bash
-git clone <YOUR_ACTUAL_REPO_URL>
+git clone https://github.com/LingSeanCoder/STAT3013.Q21_Group07.git
 cd STAT3013.Q21_Group07
 ```
 
