@@ -16,7 +16,7 @@
 > *Converting fragmented hypertrophy science into predictive, explainable,*
 > *safety-aware, and deployable optimization.*
 
-[📊 Dataset](https://osf.io/6z3xu/overview)    ·    [🎥 Demo](https://drive.google.com/drive/folders/1t5nOGhR7J-a1V3LxqmBxCuO7EX1gw5cj?usp=drive_link)    ·    [🌐 Web App](https://trainhyp-app.vercel.app/)
+[📊 Dataset](https://osf.io/6z3xu/overview) · [🎥 Demo](https://drive.google.com/drive/folders/1t5nOGhR7J-a1V3LxqmBxCuO7EX1gw5cj?usp=drive_link) · [🌐 Web App](https://trainhyp-app.vercel.app/)
 
 </div>
 
@@ -72,8 +72,8 @@
 | **Expanded** | Training + Hypertrophy + Artificial Intelligence |
 | **Repository** | `STAT3013.Q21_Group07` |
 | **Version** | v1.0 |
-| **Course** | STAT3013 — Applied Statistics |
-| **Group** | Q21 — Group 07 |
+| **Course** | STAT3013.Q21 |
+| **Group** | Group 07 |
 | **Core Identity** | AI-Driven Muscle Hypertrophy Prediction, Optimization & Decision Support System |
 
 ### What TrainHyp AI Is
@@ -146,7 +146,7 @@ Input → Predict → Explain → Optimize → Recommend
 1. **Translational gap**: Hypertrophy research exists but is not actionable by practitioners or athletes without scientific training.
 2. **Standardization**: By operationalizing Hedges' g as the universal effect metric, the system enables cross-study comparability that raw outcome measures cannot provide.
 3. **Safety awareness**: Rather than prescribing single-point predictions, the system quantifies uncertainty and flags out-of-distribution inputs — a scientific responsibility gap in most fitness applications.
-4. **Methodology rigor**: The multi-model benchmarking framework (classical → gradient boosting → probabilistic → deep learning → structural) represents a methodological survey rarely seen at undergraduate level.
+4. **Methodology rigor**: The multi-model benchmarking framework (classical → gradient boosting → probabilistic → deep learning → structural) represents methodological integration advanced beyond typical undergraduate scope.
 5. **Open science alignment**: The OSF dataset source reflects transparency and reproducibility values central to modern statistical research.
 
 ---
@@ -295,7 +295,7 @@ The project comprises **10 computational notebooks** organized into two function
 
 ---
 
-### 📂 Data Layer (4 Notebooks)
+### Data Layer (4 Notebooks)
 
 #### `Data_Cleaning.ipynb`
 **Purpose:** Foundation of all downstream analysis. Implements study inclusion/exclusion logic, missing value handling, feature engineering, variable encoding, and dataset validation.
@@ -333,7 +333,7 @@ The project comprises **10 computational notebooks** organized into two function
 
 ---
 
-### 🤖 Model Layer (6 Notebooks)
+### Model Layer (6 Notebooks)
 
 #### `NB01_EBM.ipynb` — Explainable Boosting Machine
 **Purpose:** Trains and evaluates an EBM (GA²M) — an inherently interpretable gradient boosting model with shape function decomposition.
@@ -383,7 +383,7 @@ The project comprises **10 computational notebooks** organized into two function
 #### `NB06_SEM.ipynb` — Structural Equation Modeling
 **Purpose:** Constructs a latent variable structural model linking training volume, frequency, and failure to hypertrophy through a theoretically grounded path structure.
 
-**Role:** Scientific validation layer. Operates outside the predictive ML paradigm — tests causal path hypotheses rather than optimizing prediction loss.
+**Role:** Scientific validation layer. Operates outside the predictive ML paradigm — tests theory-informed structural relationships rather than optimizing prediction loss.
 
 **Strategic Contribution:** Demonstrates methodological breadth and distinguishes the project from a pure machine learning exercise.
 
@@ -417,7 +417,7 @@ The project comprises **10 computational notebooks** organized into two function
 | **Volume is the dominant predictor** | VERIFIED — across multiple models and statistical tests | Consistent across EBM, NGBoost, GAM, inferential tests |
 | **More weekly sets generally associate with greater hypertrophy** | VERIFIED within dataset | Positive volume-response relationship observed |
 | **Diminishing returns at high volumes** | INFERRED from GAM dose-response | Marginal hypertrophy gain decreases as weekly sets increase |
-| **Practical volume threshold ~32 weekly sets** | INFERRED — VERIFY FROM SOURCE | Approximate inflection point in dose-response analysis |
+| **Evidence-constrained practical reference around ~32 weekly sets** | INFERRED — VERIFY FROM SOURCE | Approximate inflection point in dose-response analysis; not a universal threshold |
 | **Nutrition surplus context shows advantage** | VERIFIED in subgroup analysis | Studies with nutritional control exhibit higher Hedges' g within dataset |
 | **Failure context dependency** | VERIFIED in subgroup analysis | Effect of failure-proximity is inconsistent and moderated by other variables |
 | **Multifactorial but volume-dominant pattern** | VERIFIED across all model layers | Other features contribute meaningfully but volume remains primary driver |
@@ -428,14 +428,14 @@ The project comprises **10 computational notebooks** organized into two function
 
 | Model | Type | Interpretability | Uncertainty | Dataset Suitability | Deployment Role |
 |---|---|---|---|---|---|
-| **Linear Regression** | Classical | ★★★★★ | Partial | ★★★ | Statistical baseline |
+| **Linear Regression** *(VERIFY baseline inclusion)* | Classical | ★★★★★ | Partial | ★★★ | Statistical baseline |
 | **GAM** | Semi-parametric | ★★★★☆ | Partial | ★★★★ | Dose-response visualization |
 | **EBM** | Gradient Boosting (GA²M) | ★★★★★ | No | ★★★★ | Interpretability benchmark |
 | **NGBoost** ⭐ | Probabilistic Boosting | ★★★☆☆ | **Full distribution** | ★★★★★ | **Primary deployed model** |
 | **TabNet** | Deep Learning (Tabular) | ★★☆☆☆ | No | ★★★ | Architectural benchmark |
 | **CatBoost** | Gradient Boosting | ★★★☆☆ | No | ★★★★ | Boosting benchmark |
 | **GPR** | Bayesian Non-parametric | ★★★☆☆ | **Full distribution** | ★★★ | Uncertainty reference |
-| **SEM** | Structural Causal | ★★★★★ | Partial | ★★★★ | Causal path validation |
+| **SEM** | Structural Pathway Modeling | ★★★★★ | Partial | ★★★★ | Structural path validation |
 
 ---
 
@@ -460,9 +460,7 @@ Linear models assume monotonic, additive relationships — an oversimplification
 ### NGBoost vs. GPR
 GPR shares NGBoost's probabilistic advantage but is computationally sensitive to kernel selection and does not scale as predictably. NGBoost provides a more deployment-stable uncertainty framework.
 
-**Summary:** NGBoost was selected for its combination of competitive predictive performance, full predictive distribution output (essential for the safety layer), and deployment stability. Selection was based on project benchmarking; exact benchmark metrics are documented in `NB03_NGBoost.ipynb` and `NB05_CatBoost_GPR.ipynb`.
-
-> ⚠️ VERIFY FROM SOURCE: Exact benchmark metric values (RMSE, MAE, R²) should be confirmed against notebook outputs.
+**Summary:** NGBoost was selected for its combination of competitive predictive performance, full predictive distribution output (essential for the safety layer), and deployment stability. Exact benchmark metrics (RMSE, MAE, R²) are documented in `NB03_NGBoost.ipynb` and `NB05_CatBoost_GPR.ipynb`.
 
 ---
 
@@ -482,7 +480,7 @@ TabNet provides a direct empirical demonstration of DL vs. classical ML under sm
 Unlike standard neural networks, TabNet was specifically architected for tabular data and incorporates sequential attention-based feature selection. It is not an arbitrary DL choice.
 
 **4. Methodological Rigor via Negative Result**
-If TabNet underperforms relative to NGBoost or EBM, this constitutes a valid and publishable finding: *deep learning does not universally outperform classical methods on small, structured tabular datasets*. This is a contribution, not a weakness.
+If TabNet underperforms relative to NGBoost or EBM, this constitutes a valid and meaningful finding: *deep learning does not universally outperform classical methods on small, structured tabular datasets*. This is a contribution, not a weakness.
 
 **5. Protocol Completeness**
 Including TabNet transforms the benchmark from a "cherry-picked selection" to a near-exhaustive methodological survey — strengthening the credibility of the final deployment decision.
@@ -493,14 +491,14 @@ Including TabNet transforms the benchmark from a "cherry-picked selection" to a 
 
 | Model | Primary Role | Secondary Role |
 |---|---|---|
-| **Linear Regression** | Statistical baseline | Coefficient interpretability |
+| **Linear Regression** *(VERIFY)* | Statistical baseline | Coefficient interpretability |
 | **GAM** | Dose-response visualization | Nonlinear baseline |
 | **EBM** | Interpretability benchmark | Feature importance ranking |
 | **NGBoost** | **Deployed prediction engine** | Uncertainty quantification |
 | **TabNet** | Architectural benchmark | DL vs. classical comparison |
 | **CatBoost** | Boosting performance benchmark | Robustness validation |
 | **GPR** | Bayesian uncertainty reference | Independent CI validation |
-| **SEM** | Causal path modeling | Theoretical structure validation |
+| **SEM** | Structural pathway modeling | Theory-informed path validation |
 
 ---
 
@@ -627,6 +625,7 @@ STAT3013.Q21_Group07/
 ├── README.md                        # This document
 ├── start.bat                        # One-command local deployment (Windows)
 ├── .env                             # Environment variables (not committed)
+├── .env.example                     # Environment variable template
 │
 ├── src/                             # React frontend source
 │   ├── components/                  # UI components
@@ -658,7 +657,7 @@ STAT3013.Q21_Group07/
 │       ├── services/                # Prediction, optimization logic
 │       └── safety/                  # OOD detection, uncertainty logic
 │
-├── data/                            # Dataset files (not committed if raw)
+├── data/
 │   ├── raw/                         # Original OSF dataset
 │   └── processed/                   # Cleaned, engineered dataset
 │
@@ -720,7 +719,7 @@ STAT3013.Q21_Group07/
 
 ### Clone Repository
 ```bash
-git clone https://github.com/STAT3013-Q21/STAT3013.Q21_Group07.git
+git clone <YOUR_ACTUAL_REPO_URL>
 cd STAT3013.Q21_Group07
 ```
 
@@ -737,7 +736,6 @@ pip install -r requirements.txt
 
 ### Frontend Setup
 ```bash
-# Install Node.js dependencies
 npm install
 ```
 
@@ -746,6 +744,12 @@ npm install
 # Copy template and configure
 cp .env.example .env
 # Edit .env as needed
+```
+
+**`.env.example`**
+```env
+VITE_API_URL=http://localhost:8000
+GEMINI_API_KEY=your_key_here
 ```
 
 ---
@@ -773,14 +777,14 @@ npm run dev
 
 ### Access Points
 
-| Service | URL |
+> Default configuration — verify exact ports from `vite.config.ts` and `uvicorn` startup output.
+
+| Service | URL (Default) |
 |---|---|
 | Frontend Dashboard | `http://localhost:5173` |
 | Backend API | `http://localhost:8000` |
 | API Documentation (Swagger) | `http://localhost:8000/docs` |
 | API Documentation (ReDoc) | `http://localhost:8000/redoc` |
-
-> ⚠️ VERIFY FROM SOURCE: Confirm exact ports from `vite.config.ts` and `uvicorn` configuration.
 
 ---
 
@@ -842,7 +846,7 @@ The safety layer is a non-negotiable component of a responsible AI prediction sy
 | **Out-of-Distribution (OOD) Detection** | Flags inputs that fall outside the training data distribution — predictions in OOD regions carry inflated uncertainty |
 | **NGBoost Uncertainty Quantification** | Every prediction includes a standard deviation and confidence interval; high uncertainty triggers explicit user warning |
 | **GPR Independent Uncertainty Reference** | Provides a Bayesian cross-validation of NGBoost uncertainty estimates |
-| **Practical Volume Cap (~32 sets/week)** | Recommendations are bounded by the empirical dose-response threshold observed in the data; the system does not recommend volumes beyond dataset support |
+| **Practical Volume Reference (~32 sets/week)** | Recommendations are bounded by the evidence-constrained inflection point observed in the dose-response analysis; not a universal cap |
 | **Extrapolation Warnings** | Inputs outside observed variable ranges trigger explicit extrapolation warnings |
 | **False Certainty Avoidance** | The system communicates prediction intervals, not false point precision |
 
@@ -860,7 +864,7 @@ The safety layer is a non-negotiable component of a responsible AI prediction sy
 | **Scientific humility** | All claims are evidence-constrained; uncertainty is quantified, not hidden |
 | **Translational completeness** | Full pipeline from raw literature to deployed interface |
 | **Safety-first architecture** | OOD detection and uncertainty bounds are first-class system components |
-| **Methodological breadth** | Classical statistics + ML + deep learning + causal modeling in one project |
+| **Methodological breadth** | Classical statistics + ML + deep learning + structural pathway modeling in one project |
 | **Open science alignment** | Dataset sourced from OSF; methodology documented in 10 reproducible notebooks |
 | **Deployment quality** | React + FastAPI stack with type safety (TypeScript + Pydantic) |
 
@@ -877,6 +881,8 @@ The safety layer is a non-negotiable component of a responsible AI prediction sy
 | **External validity caution** | Findings are derived from controlled research conditions; applicability to real-world heterogeneous training contexts requires further study |
 | **Missing variables** | Nutrition quality, sleep, stress, and recovery are not captured; hypertrophy is multifactorial |
 | **Cross-sectional intervention arms** | No longitudinal tracking of individual subjects; within-subject adaptation curves cannot be modeled |
+
+> TrainHyp AI is an **evidence-constrained optimization system**, not a universal prescription. Results should be interpreted within the boundaries of the underlying literature.
 
 ---
 
@@ -895,7 +901,7 @@ The safety layer is a non-negotiable component of a responsible AI prediction sy
 |---|---|
 | **Risk** | Positive-result inflation of effect size estimates |
 | **Why Acceptable** | OSF dataset curation explicitly targets methodological quality; Hedges' g is bias-corrected |
-| **Mitigation** | Funnel plot examination (INFERRED — VERIFY), conservative recommendation framing |
+| **Mitigation** | Conservative recommendation framing; uncertainty communication at every output |
 | **Future Correction** | Gray literature inclusion, registered study meta-analysis |
 
 ### Missing Biomarkers
@@ -976,8 +982,6 @@ Phase 4 — Adaptive AI Coach (v4.0)
 
 ## 33. Future Work
 
-The following research and engineering directions are identified as natural extensions of the current system:
-
 **Data Expansion**
 - Systematic expansion of the meta-analysis corpus with broader inclusion criteria
 - Direct collaboration with exercise science research groups for unpublished data access
@@ -999,13 +1003,12 @@ The following research and engineering directions are identified as natural exte
 
 **Longitudinal Personalization**
 - Individual trajectory modeling across multiple training blocks
-- Response-based phenotyping (responder vs. non-responder classification)
+- Response-based phenotyping
 
 **Fully Personalized Hypertrophy Schedule Generation**
 - Complete weekly training split with exercise selection
 - Volume-matched progressive overload scheme
 - Deload and recovery integration
-- Adaptation phase modeling
 
 ---
 
@@ -1023,27 +1026,28 @@ The following research and engineering directions are identified as natural exte
 
 ```
 Academic / Educational Use License
-STAT3013 — Applied Statistics
-Q21 — Group 07
+STAT3013.Q21 — Group 07
 
 This project was developed for academic coursework purposes.
 All scientific claims are evidence-constrained and dataset-scoped.
-This system is not intended for clinical prescription or medical use.
 
-Dataset source: OSF (Open Science Framework) — see citation.
+This system is NOT intended for clinical prescription,
+medical use, or professional coaching replacement.
+Outputs do not constitute medical advice.
+
+Dataset source: OSF (Open Science Framework)
+https://osf.io/6z3xu/overview
 ```
 
 ---
 
 ## 36. Verification Notes
 
-The following table explicitly distinguishes verified facts, inferred architecture, and source-dependent unknowns in this document.
-
 | Category | Items |
 |---|---|
-| ✅ **VERIFIED** | Dataset source (OSF), ~69 studies / ~198 observations, 10 notebooks (4 data + 6 model), model names (EBM, GAM, NGBoost, TabNet, CatBoost, GPR, SEM), Tech stack (React + Vite + TypeScript + Tailwind + FastAPI), deployed model = NGBoost, target variable = Hedges' g, feature list, demo link |
-| 🔶 **INFERRED** | Exact `.pkl` filenames, API route names and schemas, frontend route structure, exact benchmark metric values (RMSE/MAE/R²), volume threshold of ~32 sets, specific figure filenames |
-| ⚠️ **VERIFY FROM SOURCE** | Web application deployment URL, exact API port configuration, exact frontend router paths, report and slide deck links, specific notebook output values |
+| ✅ **VERIFIED** | Dataset source (OSF), ~69 studies / ~198 observations, 10 notebooks (4 data + 6 model), model names (EBM, GAM, NGBoost, TabNet, CatBoost, GPR, SEM), tech stack (React + Vite + TypeScript + Tailwind + FastAPI), deployed model = NGBoost, target variable = Hedges' g, feature list, demo link, web app URL, fig1–fig5 filenames |
+| 🔶 **INFERRED** | Exact `.pkl` filenames, API route names and schemas, frontend route structure, exact benchmark metric values (RMSE/MAE/R²), volume inflection reference of ~32 sets, SEM path fit indices |
+| ⚠️ **VERIFY FROM SOURCE** | Exact API port configuration, exact frontend router paths, Linear Regression baseline inclusion, specific notebook output values |
 
 > **Principle:** No metric values were fabricated. No route names were presented as definitive without explicit INFERRED or VERIFY FROM SOURCE labels. All uncertain sections are clearly marked.
 
@@ -1051,32 +1055,23 @@ The following table explicitly distinguishes verified facts, inferred architectu
 
 ## 37. Final Declaration
 
-<div align="center">
-
 ---
 
 **TrainHyp AI is not merely a coursework dashboard.**
 
 It is a research-first translational statistical intelligence ecosystem — converting fragmented hypertrophy science into a predictive, explainable, safety-aware, and deployable optimization system.
 
-The project demonstrates that undergraduate statistical research can achieve:
-- Methodological rigor equivalent to graduate-level systems
-- Translational completeness from raw literature to deployed interface
+The project demonstrates methodological integration advanced beyond typical undergraduate scope:
+- End-to-end pipeline from raw literature to deployed interface
 - Scientific humility through uncertainty quantification and evidence-constrained claims
-- Architectural sophistication spanning classical statistics, probabilistic ML, deep learning, and causal modeling
+- Architectural breadth spanning classical statistics, probabilistic ML, deep learning, and structural pathway modeling
 
 ---
 
 *STAT3013.Q21 — Group 07 · TrainHyp AI v1.0*
 
-</div>
-
 ---
-
-<div align="center">
 
 **Built with scientific discipline. Deployed with engineering precision.**
 
 *"Methodological quality > dataset size."*
-
-</div>
