@@ -636,20 +636,22 @@ STAT3013.Q21_Group07/
 │
 ├── AI_ML/
 │   ├── notebooks/                   # All 10 research notebooks
-│   │   ├── Data_Cleaning.ipynb
-│   │   ├── Descriptive_Statistics.ipynb
-│   │   ├── Inferential_Statistics.ipynb
-│   │   ├── Subgroup_Analysis.ipynb
 │   │   ├── NB01_EBM.ipynb
 │   │   ├── NB02_GAM.ipynb
 │   │   ├── NB03_NGBoost.ipynb
 │   │   ├── NB04_TabNet.ipynb
 │   │   ├── NB05_CatBoost_GPR.ipynb
 │   │   └── NB06_SEM.ipynb
+│   │   └── ai_engine.py
 │   │
-│   ├── trained_models/              # Serialized model artifacts (.pkl)
-│   ├── preprocessors/               # Preprocessing pipeline artifacts
-│   │
+    ├── backend_models                 
+│   │   ├── catboost_clf.pkl  
+│   │   ├── ebm_model.pkl
+│   │   ├── gam_model.pkl
+│   │   ├── gpr_model.pkl
+│   │   ├── linear_model.pkl
+│   │   ├── ngb_model.pkl
+│   │   └── tabnet_model.zip
 │   └── api/
 │       ├── main.py                  # FastAPI application entry point
 │       ├── routers/                 # API route handlers
@@ -657,10 +659,18 @@ STAT3013.Q21_Group07/
 │       ├── services/                # Prediction, optimization logic
 │       └── safety/                  # OOD detection, uncertainty logic
 │
-├── data/
-│   ├── raw/                         # Original OSF dataset
-│   └── processed/                   # Cleaned, engineered dataset
+├── Dataset/
+│   ├── Extracted-Data.xlsx          # Original OSF dataset
+│   └── data_cleaned.csv             # Cleaned, engineered dataset
+|   └── data_features.csv            # features for training model
+|   └── descriptive_stats.csv             
 │
+├── Data_Analysis/
+│   ├── Data_Cleaning.ipynb             # Cleaning, transformation, preprocessing
+│   ├── Descriptive_Statistics.ipynb    # Descriptive statistical analysis
+│   ├── Inferential_Statistics.ipynb    # Hypothesis testing & inferential stats
+│   ├── Subgroup_Analysis.ipynb         # Segment / subgroup comparisons 
+|
 ├── figures/                         # Generated figures from notebooks
 ├── requirements.txt                 # Python dependencies
 └── package.json                     # Node.js dependencies
