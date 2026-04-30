@@ -431,7 +431,7 @@ The project comprises **10 computational notebooks** organized into two function
 | **Linear Regression** *(VERIFY baseline inclusion)* | Classical | ★★★★★ | Partial | ★★★ | Statistical baseline |
 | **GAM** | Semi-parametric | ★★★★☆ | Partial | ★★★★ | Dose-response visualization |
 | **EBM** | Gradient Boosting (GA²M) | ★★★★★ | No | ★★★★ | Interpretability benchmark |
-| **NGBoost** ⭐ | Probabilistic Boosting | ★★★☆☆ | **Full distribution** | ★★★★★ | **Primary deployed model** |
+| **NGBoost**  | Probabilistic Boosting | ★★★☆☆ | **Full distribution** | ★★★★★ | **Primary deployed model** |
 | **TabNet** | Deep Learning (Tabular) | ★★☆☆☆ | No | ★★★ | Architectural benchmark |
 | **CatBoost** | Gradient Boosting | ★★★☆☆ | No | ★★★★ | Boosting benchmark |
 | **GPR** | Bayesian Non-parametric | ★★★☆☆ | **Full distribution** | ★★★ | Uncertainty reference |
